@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Emails about {{key}}</title>
+        <link rel="stylesheet" href="static/keyword.css">
+    </head>
+    <body>
+        <div class="container">
+            {%for email in emails -%}
+                <h3>Subject: {{email.subject}} </h3>
+                <p>From: {{email.sender}} </p>
+                <p>To: {{email.receipient}} </p>
+                <p>Date Sent: {{email.date}} </p>
+            {%- endfor%}
+        </div>
+    </body>
+</html>

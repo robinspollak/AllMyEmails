@@ -1,0 +1,87 @@
+/*gmail red: rgb(215,75,62),lightgrey: rgb(241,241,241), darkgrey: rgb(229,229,299)*/
+html{
+    margin:0;
+    padding:0;
+    height:100%;
+}
+body{
+    background-color: rgb(241,241,241);
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin:0;
+    padding:0;
+    height:100%;
+}
+#keyword:hover{
+    color: rgb(241,241,241);
+    text-decoration: underline;
+}
+.title-area{
+    margin-top:0 !important;
+    height: 150px;
+    width:100%;
+    text-align: center;
+    padding-bottom: 2.5%;
+    background-color:rgb(241,241,241);
+    border-bottom: rgb(215,75,62) 3px solid;
+}
+.title-area-no-border{
+    margin-top:0 !important;
+    height: 150px;
+    width:100%;
+    text-align: center;
+    padding-bottom: 2.5%;
+    background-color:rgb(241,241,241);
+}
+.title-top-line{
+    padding-bottom:0;
+    margin-bottom: 1%;
+    font-size: 74px;
+    background-color:rgb(241,241,241);
+}
+.border{
+    border-bottom: rgb(215,75,62) 3px solid;
+}
+#title-bottom-line{
+    margin-top:0;
+    padding-top:0;
+}
+.container{
+    width: 90%;
+    margin: 5%;
+    margin-top: 2.5%;
+    padding-bottom: 2.5%;
+}
+#keyword{
+    font-weight: lighter;
+    background-color: rgb(215,75,62);
+    float:left;
+    margin: .5% .5%;
+    width: 24% !important;
+    min-width: 115px;
+    height: 10% !important;
+    position:relative;
+    width:auto;
+    text-align: center;
+    border: 1px solid #333;
+    color: #333;
+    border-radius: 10px;
+    text-decoration:none;
+}
+#name{
+    margin-bottom: 0 !important;
+    margin-top: 2px !important;
+    padding: 0;
+    font-size: 25px;
+    font-weight: bold;
+}
+#frequency{
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    font-size: 15px;
+    font-weight: lighter;
+    text-decoration: none !important;
+}
+
+

@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>All My Emails</title>
+        <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="static/index.css">
+    </head>
+    <body>
+        <div id="selector" class="title-area">
+            <h1 id= "selector2" class="title-top-line">The Words People Email Me Most</h1>
+            <h3 id="title-bottom-line"><em>sorted by subject keywords</em></h3>
+            <div id="clearer"></div>
+        </div>
+        <div class="container">
+            {% for keyword in words -%}
+                <a id="keyword"href="/{{keyword.name}}">
+                    <div>
+                        <p id="name">{{keyword.name}}</p>
+                        <p id="frequency">({{keyword.frequency}})</p>
+                    </div>
+                </a>
+            {%- endfor %}
+            <div id="clearer"></div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="static/jq-sticky-anything.min.js"></script>
+        <script>$('.title-top-line').stickThis();
+            $(window).scroll(function(){
+                var sc = $(window).scrollTop();
+                if (sc>75){
+                    $('#selector').removeClass('title-area');
+                    $('#selector').addClass('title-area-no-border');
+                    $('.cloned').css('border-bottom','rgb(215,75,62) 3px solid');
+                    $('.cloned').css('padding-bottom','10px');
+                }
+                else{
+                    $('#selector').addClass('title-area');
+                    $('#selector').removeClass('title-area-no-border');
+                    $('.cloned').css('border-bottom','none');
+                    $('.cloned').css('padding-bottom','0');
+                }
+            });
+        </script>
+    </body>
+</html>
