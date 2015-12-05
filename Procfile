@@ -1,2 +1,2 @@
-web: gunicorn flask_app.py:app --log-file=-
+web: gunicorn flask_app:app --log-file=-
 heroku ps: scale web=1
