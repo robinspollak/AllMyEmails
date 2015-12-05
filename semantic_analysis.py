@@ -1,4 +1,4 @@
-from myEmail import *
+from classes import *
 import cPickle as pickle
 emails = []
 def pickleLoader(pklFile):
