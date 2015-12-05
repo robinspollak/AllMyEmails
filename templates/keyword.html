@@ -39,5 +39,22 @@
                 });
             }); 
         </script> 
+        <script>$('.title-top-line').stickThis();
+            $(window).scroll(function(){
+                var sc = $(window).scrollTop();
+                if (sc>55){
+                    $('#selector').removeClass('title-area');
+                    $('#selector').addClass('title-area-no-border');
+                    $('.cloned').css('border-bottom','rgb(215,75,62) 3px solid');
+                    $('.cloned').css('padding-bottom','10px');
+                }
+                else{
+                    $('#selector').addClass('title-area');
+                    $('#selector').removeClass('title-area-no-border');
+                    $('.cloned').css('border-bottom','none');
+                    $('.cloned').css('padding-bottom','0');
+                }
+            });
+        </script>
     </body>
 </html>
