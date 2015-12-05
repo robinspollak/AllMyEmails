@@ -1,7 +1,7 @@
 from classes import *
 from semantic_analysis import word_dict,amount_dict
 from flask import Flask, url_for, render_template, redirect, request, json,jsonify
-
+import os
 app = Flask(__name__)
 
 keywords = []
