@@ -2,12 +2,13 @@ import imaplib,email
 import cPickle as pickle
 from keys import username,password
 from classes import *
+import uuid
 def email_from_raw(uid_):
     result, data = mail.uid('fetch',uid_,'(RFC822)')
     raw = data[0][1]
     working_email = email.message_from_string(raw)
     attributes = [working_email['From'],working_email['To'],\
-    working_email['Subject'],working_email['Date']]
+    working_email['Subject'],working_email['Date'],uuid.uuid4().urn[9:]]
     for index in range(len(attributes)):
     	if attributes[index] == None:
     		return None #mark emails missing fields for removal later

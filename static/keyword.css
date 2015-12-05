@@ -1,7 +1,62 @@
 /*gmail red: rgb(215,75,62),cell background: rgb(241,241,241),cell font color: #333,green:#7ed73e*/
 body{
-    background-color: rgb(215,75,62);
+    background-color: rgb(241,241,241);
     font-family: 'Arial',sans-serif;
     color: #333;
 }
-
+.email{
+    overflow:hidden;
+    height: 55px;
+    width: 80%;
+    text-align: center;
+    margin-left:10% !important;
+    margin-right:10% !important;
+    border: 1px solid #333;
+    margin: 1% 1%;
+    background-color: rgb(215,75,62);
+    border-radius: 10px;
+}
+.date{
+    margin-bottom: 3px;
+}
+.subject{
+    margin-top: 12px;
+}
+#div{
+    clear:both;
+}
+.title-area{
+    margin-top:0 !important;
+    height: 150px;
+    width:100% !important;
+    text-align: center;
+    background-color:rgb(241,241,241);
+    border-bottom: rgb(215,75,62) 3px solid;
+    font-weight: 100 !important;
+    margin-bottom: 30px;
+}
+.title-area-no-border{
+    margin-top:0 !important;
+    height: 150px;
+    width:100%;
+    text-align: center;
+    padding-bottom: 2.5%;
+    background-color:rgb(241,241,241);
+}
+.title-top-line{
+    padding-bottom:0;
+    margin-bottom: 1%;
+    font-size: 74px;
+    background-color:rgb(241,241,241);
+    font-weight: 400;
+}
+.border{
+    border-bottom: rgb(215,75,62) 3px solid;
+}
+.email-item{
+    font-size: 25px;
+}
+#title-bottom-line{
+    margin-top:0;
+    font-weight: 500;
+}

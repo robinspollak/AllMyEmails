@@ -14,7 +14,7 @@ def index():
 
 @app.route('/<keyword_>')
 def render(keyword_):
-    return render_template("keyword.html",key = keyword_,emails=word_dict[keyword_.lower()])
+    return render_template("keyword.html",key = keyword_.lower().capitalize(),emails=word_dict[keyword_.lower()])
 
 if __name__ == '__main__':
     app.run(debug=True)

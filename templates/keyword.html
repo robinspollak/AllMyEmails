@@ -3,14 +3,41 @@
         <title>Emails about {{key}}</title>
         <link rel="stylesheet" href="static/keyword.css">
     </head>
-    <body>
+    <body> 
+        <div id="selector" class="title-area">
+            <h1 id= "selector2" class="title-top-line">"{{key}}" Emails</h1>
+            <h3 id="title-bottom-line"><em>click an email to expand</em></h3>
+            <div id="clear"></div>
+        </div>
         <div class="container">
             {%for email in emails -%}
-                <h3>Subject: {{email.subject}} </h3>
-                <p>From: {{email.sender}} </p>
-                <p>To: {{email.receipient}} </p>
-                <p>Date Sent: {{email.date}} </p>
+                <div class="email" id="{{email.uuid}}">
+                    <p class="email-item subject">Subject: {{email.subject}} </p>
+                    <p class="email-item"> From: {{email.sender}} </p>
+                    <p class="email-item">To: {{email.receipient}} </p>
+                    <p class="date email-item">Date Sent: {{email.date}} </p>
+                </div>
+                <div id="clear"></div>
             {%- endfor%}
         </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="static/jq-sticky-anything.min.js"></script>
+        <script>
+            isLarge = false; 
+            $(document).ready(function(){
+                $(".email").click(function(){
+                    var type = $(event.target).prop('tagName');
+                    if (type=='div' || type =='DIV'){
+                        console.log("div");
+                    var clicked = $(event.target);
+                    }
+                    else{
+                        var clicked = $(event.target).parent();
+                    }
+                    $(clicked).animate({height:(isLarge ? '55px' : '220px')});
+                    isLarge = !isLarge;    
+                });
+            }); 
+        </script> 
     </body>
 </html>

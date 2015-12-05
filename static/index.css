@@ -24,6 +24,7 @@ body{
     padding-bottom: 2.5%;
     background-color:rgb(241,241,241);
     border-bottom: rgb(215,75,62) 3px solid;
+    min-width: 1125px;
 }
 .title-area-no-border{
     margin-top:0 !important;
@@ -58,7 +59,8 @@ body{
     float:left;
     margin: .5% .5%;
     width: 24% !important;
-    min-width: 115px;
+    min-width: 190px;
+    min-height:65px;
     height: 10% !important;
     position:relative;
     width:auto;
