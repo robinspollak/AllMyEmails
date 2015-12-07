@@ -10,6 +10,9 @@ def pickleLoader(pklFile):
 with open('email-data.pkl','r') as my_input:
     for item in pickleLoader(my_input):
         emails.append(item)
+with open('email-data2.pkl','r') as my_input:
+    for item in pickleLoader(my_input):
+        emails.append(item)
 emails = [x for x in emails if x != None] #get rid of values that were missing 1 or more fields
 email_subjects = map(lambda x: (x.subject).split(" "), emails)
 word_dict={}
@@ -25,7 +28,7 @@ boring_words =['re:', 'your', 'to', 'for', '-','the', '', 'from', 'robin', 'and'
 'on', 'you', 'a', '[all_students]', 'pollak', 'in', 'of', 'is',\
 '[student_information]', '[csmajors2018]', 'new', 'with', '[practice-scala]',\
 'has', 'at','pm', 'this','been','2015', 'by', '[classof2018]','(#4)','60.3','(#5)','fwd:','have','up',\
-'[what-is-a-dsl]','i','fa15','zoab','[instr','note]','(#10)','(#1)','[action']
+'[what-is-a-dsl]','[project-ideas]','i','fa15','zoab','[instr','note]','(#10)','(#1)','[action']
 word_dict = {key:value for key,value in word_dict.items() if key not in boring_words}
 word_dict = {key:value for key,value in word_dict.items() if (len(key)>3 or key == 'cs' or key == 'pm')}
 amount_dict = {keyword: len(value) for keyword,value in word_dict.items()}
@@ -34,3 +37,4 @@ word_dict = {key:value for key,value in word_dict.items() if (key in top_keys\
 or key == "internship")}
 amount_dict = {key:value for key,value in amount_dict.items() if (key in top_keys\
 or key == "internship")}
+print amount_dict['internship']

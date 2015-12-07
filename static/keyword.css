@@ -35,14 +35,6 @@ body{
     font-weight: 100 !important;
     margin-bottom: 30px;
 }
-.title-area-no-border{
-    margin-top:0 !important;
-    height: 150px;
-    width:100%;
-    text-align: center;
-    padding-bottom: 2.5%;
-    background-color:rgb(241,241,241);
-}
 .title-top-line{
     padding-bottom:0;
     margin-bottom: 1%;

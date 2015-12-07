@@ -13,7 +13,10 @@ def email_from_raw(uid_):
     	if attributes[index] == None:
     		return None #mark emails missing fields for removal later
     	else:
-    		attributes[index] = attributes[index].decode('utf-8')
+            try:
+    		        attributes[index] = attributes[index].decode('utf-8')
+            except:
+                return None
     return myEmail(*attributes)
 
 url = 'imap.gmail.com'
@@ -26,6 +29,21 @@ progress_counter = 0
 num_emails = len(uids)
 print num_emails
 with open('email-data.pkl','wb') as output:
+    for working_email in uids:
+        print (float(progress_counter)/num_emails)
+        pickle.dump(email_from_raw(working_email),output,-1)
+        progress_counter+=1
+imaplib.IMAP4.close(mail)
+imaplib.IMAP4.logout(mail)
+mail = imaplib.IMAP4_SSL(url)
+mail.login('rpollak96@gmail.com',password)
+mail.select('inbox')
+result, data = mail.uid('search', None, "ALL") # search and return uids instead
+uids = data[0].split()
+progress_counter = 0
+num_emails = len(uids)
+print num_emails
+with open('email-data2.pkl','wb') as output:
     for working_email in uids:
         print (float(progress_counter)/num_emails)
         pickle.dump(email_from_raw(working_email),output,-1)
