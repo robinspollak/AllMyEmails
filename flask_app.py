@@ -1,8 +1,12 @@
 from classes import *
-from semantic_analysis import word_dict,amount_dict
 from flask import Flask, url_for, render_template, redirect, request, json,jsonify
 import os
+import cPickle as pickle
 app = Flask(__name__)
+with open('dictionary_data.pkl','r') as my_input:
+    word_dict = pickle.load(my_input)
+    amount_dict = pickle.load(my_input)
+
 
 keywords = []
 for word in word_dict.keys():

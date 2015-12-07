@@ -37,4 +37,6 @@ word_dict = {key:value for key,value in word_dict.items() if (key in top_keys\
 or key == "internship")}
 amount_dict = {key:value for key,value in amount_dict.items() if (key in top_keys\
 or key == "internship")}
-print amount_dict['internship']
+with open('dictionary_data.pkl','wb') as output:
+    pickle.dump(word_dict,output,-1)
+    pickle.dump(amount_dict,output,-1)
