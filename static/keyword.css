@@ -16,6 +16,9 @@ body{
     background-color: rgb(215,75,62);
     border-radius: 10px;
 }
+.white-hover:hover{
+    color: rgb(241,241,241)
+}
 .date{
     margin-bottom: 3px;
 }
@@ -47,6 +50,7 @@ body{
 }
 .email-item{
     font-size: 25px;
+    color: inherit;
 }
 #title-bottom-line{
     margin-top:0;

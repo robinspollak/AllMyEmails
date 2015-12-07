@@ -11,7 +11,7 @@
         </div>
         <div class="container">
             {%for email in emails -%}
-                <div class="email" id="{{email.uuid}}">
+                <div class="email white-hover" id="{{email.uuid}}">
                     <p class="email-item subject">Subject: {{email.subject}} </p>
                     <p class="email-item"> From: {{email.sender}} </p>
                     <p class="email-item">To: {{email.receipient}} </p>
@@ -40,6 +40,12 @@
                     });
                     var numpixels = (height-60).toString()+"px";
                     $(clicked).animate({height:(isLarge ? '55px' : numpixels )});
+                    if (!isLarge){
+                        $(clicked).removeClass('white-hover');
+                    }
+                    else{
+                        $(clicked).addClass('white-hover');
+                    }
                     isLarge = !isLarge;    
                 });
             }); 
